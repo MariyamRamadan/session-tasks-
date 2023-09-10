@@ -1,0 +1,22 @@
+def binary_search_iterative(arr, x):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
+arr = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+index = binary_search(arr,x)
+x = 12
+if index != -1:
+    print(f"Element {x} found at index {index}.")
+else:
+    print(f"Element {x} not found.")
