@@ -1,0 +1,28 @@
+def are_anagrams(str1, str2):
+    # Remove whitespace and convert to lowercase
+    str1 = str1.replace(" ", "").lower()
+    str2 = str2.replace(" ", "").lower()
+    # Create dictionaries to store character frequencies
+    dict1 = {}
+    dict2 = {}
+
+    # Update frequency count for characters in str1
+    for char in str1:
+        dict1[char] = dict1.get(char, 0) + 1
+
+    # Update frequency count for characters in str2
+    for char in str2:
+        dict2[char] = dict2.get(char, 0) + 1
+
+    # Compare the dictionaries
+    if dict1 == dict2:
+        return True
+    else:
+        return False
+    
+string1 = "abbc"
+string2 = "abcd"
+if are_anagrams(string1, string2):
+    print("The strings are anagrams.")
+else:
+    print("The strings are not anagrams.")
