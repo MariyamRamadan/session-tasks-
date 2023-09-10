@@ -1,0 +1,15 @@
+def find_sum(numbers, x):
+    seen_numbers = set()
+
+    for number in numbers:
+        difference = x - number
+        if difference in seen_numbers:
+            print(f"yes\n{x} = {difference} + {number}")
+            return
+        seen_numbers.add(number)
+
+    print("no")
+# run
+numbers = [3, 1, 4, 5, 17, 8, 11, 9]
+x = 19
+find_sum(numbers, x)
